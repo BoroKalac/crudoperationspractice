@@ -1,0 +1,23 @@
+
+
+td, th {
+    border: 1px solid black;
+}
+
+.addUserButton {
+    margin: 10px 10px 10px 0;
+}
+
+.buttonExternal {
+    margin: 10px 10px 10px 0;
+}
+
+#userInformation {
+    margin: 20px 20px 20px 0;
+    font-size: 15px;    
+    display: inline-block;
+}
+
+#form {
+    display: none;
+}

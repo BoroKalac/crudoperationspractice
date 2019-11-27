@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body  onload="showOnlyHomeSection()">
+        <div id="homeSection">
+            <h1>Home</h1>
+            <button id="showUsers" class="buttonExternal" onclick="loadUsersSection()">Users</button>
+            <button id="showPosts" class="buttonExternal"onclick="loadPostsSection()">Posts</button>
+        </div>
+        <div id="usersSection">
+        <h1>Users App</h1>
+        <button id="backToHome" class="buttonExternal" onclick="showOnlyHomeSection()">Home</button>
+        <div id="userListDiv">
+            <button id="addUserButton" class="buttonExternal" onclick="addUser()">Add User</button>
+            <div id="userListTable"></div>
+        </div>
+        <div id="userDetailDiv">
+            <div>
+                Name:<br>
+                <input type="text" id="nameInput"><br>
+                Username:<br>
+                <input type="text" id="usernameInput"><br>
+                Email:<br>
+                <input type="text" id="emailInput"><br>
+                Phone:<br>
+                <input type="text" id="phoneInput"><br>
+                City:<br>
+                <input type="text" id="cityInput"><br>
+                <button class="addButton" id="saveUser" onclick="onSaveUserButtonClick()">Save</button>
+                <button class="cancel" onclick="cancelUserForm()" id="cancelUserForm">X</button>
+            </div>
+        </div>
+        <div id="userInformation"></div>
+        </div>
+        <div id="postsSection">
+            <h1>Posts App</h1>
+            <button id="backToHome" class="buttonExternal" onclick="showOnlyHomeSection()">Home</button>
+                <div id="postListDiv">
+                <button id="addPostButton" class="buttonExternal" onclick="addPost()">Add Post</button>
+                    <div id="postListTable"></div>
+            </div>
+            <div id="postDetailDiv">
+                <div>
+                    Title:<br>
+                    <textarea rows="1" cols="50" id="titleInput"></textarea><br>
+                    Body:<br>
+                    <textarea rows="4" cols="50" id="bodyInput"></textarea><br>
+                    
+                    <button class="addButton" id="savePost" onclick="onSavePostButtonClick()">Save</button>
+                    <button class="cancel" onclick="cancelPostForm()" id="cancelPostForm">X</button>
+                </div>
+            </div>
+        </div>
+        <script src="ui.js"></script>
+        <script src="ajaxService.js"></script>
+        <script src="post.js"></script>
+        <script src="currentPost.js"></script>
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </body>
+</html>
