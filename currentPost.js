@@ -3,8 +3,11 @@ function CurrentPost() {
 
     var ajaxService = new AjaxService(url);
     var ui = new Ui();
-
-    this.loadPostDetails = function() {
-        ajaxService.getObject(ui.showPostDetails);
-    }
-}
+    var call = function(responseObject) {
+        ui.showPostDetails(responseObject)
+    };
+    this.loadPostDetails = function(id) {
+        ajaxService.getObject(id, call);
+    };
+    
+    };

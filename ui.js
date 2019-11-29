@@ -17,6 +17,7 @@ function Ui() {
     };
     this.showPostDetails = function(currentPost) {
         document.getElementById("titleInput").value = currentPost.title;
-        document.getElementById("bodyInput").value = currentPost.body;   
+        document.getElementById("bodyInput").value = currentPost.body; 
+        showPostDetails();
     }
 }

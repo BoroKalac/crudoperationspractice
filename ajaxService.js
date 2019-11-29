@@ -13,20 +13,17 @@ function AjaxService(url) {
         xmlhttp.send();
     }
 
-    this.getObject = function(id) {
+    this.getObject = function(id, callbackFunction) {
         var xmlhttp = new XMLHttpRequest();
-        var url = url + id;
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            currentPost = JSON.parse(xmlhttp.response);
-            document.getElementById("titleInput").value = currentPost.title;
-            document.getElementById("bodyInput").value = currentPost.body;   
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                var responseObject = JSON.parse(xmlhttp.response); 
+                callbackFunction(responseObject);
+            };
         };
-    };
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-
-    };
+        xmlhttp.open("GET", url + id, true);
+        xmlhttp.send();
+        };
     
     this.deleteObject = function(id) {
         //TODO
