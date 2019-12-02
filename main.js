@@ -29,6 +29,11 @@ function loadPostDetails(id) {
     currentPost.loadPostDetails(id);
 }
 
+function onPostDeleteClick(id) {
+    var currentPost = new CurrentPost();
+    currentPost.onPostDeleteClick(id);
+};
+
 // Displaying posts end
 
 // Displaying users start

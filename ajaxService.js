@@ -26,7 +26,18 @@ function AjaxService(url) {
         };
     
     this.deleteObject = function(id) {
-        //TODO
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                var i;
+                for(i = 0; i < array.length; i++) {
+                if (array[i].id === id)
+                array.splice(i, 1);
+                };
+            };
+        };
+        xmlhttp.open("DELETE", url + id, true);
+        xmlhttp.send();
     };
 
     this.addObject = function() {

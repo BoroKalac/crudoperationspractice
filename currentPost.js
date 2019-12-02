@@ -9,5 +9,4 @@ function CurrentPost() {
     this.loadPostDetails = function(id) {
         ajaxService.getObject(id, call);
     };
-    
-    };
+};
