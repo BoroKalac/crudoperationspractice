@@ -1,7 +1,7 @@
 function Ui() {
     this.hideHomeSection = function() {
         document.getElementById("homeSection").style.display = "none";
-    }
+    };
     this.showPostCollection = function(postCollection) {
         this.hideHomeSection();
         var generatedHtml = "<table><tr><th>See details</th><th>Number</th><th>Title</th><th>Body</th></tr>";
@@ -20,4 +20,7 @@ function Ui() {
         document.getElementById("bodyInput").value = currentPost.body; 
         showPostDetails();
     }
-}
+    this.showPostCollectionAfterDeletion = function() {
+
+    };
+};

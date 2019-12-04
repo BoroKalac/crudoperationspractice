@@ -30,8 +30,8 @@ function loadPostDetails(id) {
 }
 
 function onPostDeleteClick(id) {
-    var currentPost = new CurrentPost();
-    currentPost.onPostDeleteClick(id);
+    var post = new Post();
+    post.delete(id);
 };
 
 // Displaying posts end

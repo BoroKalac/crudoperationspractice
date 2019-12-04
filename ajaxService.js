@@ -11,7 +11,7 @@ function AjaxService(url) {
         };
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
-    }
+    };
 
     this.getObject = function(id, callbackFunction) {
         var xmlhttp = new XMLHttpRequest();
@@ -25,16 +25,14 @@ function AjaxService(url) {
         xmlhttp.send();
         };
     
-    this.deleteObject = function(id) {
+    this.deleteObject = function(id, callbackFunction) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4) {
-                var i;
-                for(i = 0; i < array.length; i++) {
-                if (array[i].id === id)
-                array.splice(i, 1);
-                };
-            };
+                // array = JSON.parse(this.responseText);
+                //koji argument?
+                callbackFunction();
+            };     
         };
         xmlhttp.open("DELETE", url + id, true);
         xmlhttp.send();
@@ -46,5 +44,5 @@ function AjaxService(url) {
 
     this.saveObject = function() {
         // ovde ces da odlucujes da li zoves update ili new
-    }
-}
+    };
+};
